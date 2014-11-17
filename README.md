@@ -20,6 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
+System wide rbenv install
+
 ### Recipe
 
 ```
@@ -28,6 +30,8 @@ include_recipe "rbenv::system"
 ```
 
 ### Node
+
+Use this with `itamae -y node.yml`
 
 ```yaml
 # node.yml
@@ -39,7 +43,15 @@ rbenv:
     - 2.1.3
 ```
 
-Use this with `itamae -y node.yml`
+### .bashrc
+
+Recommend to append this to .bashrc in your server.
+
+```bash
+export RBENV_ROOT=/usr/local/rbenv
+export PATH="${RBENV_ROOT}/bin:${PATH}"
+eval "$(rbenv init -)"
+```
 
 ## License
 
