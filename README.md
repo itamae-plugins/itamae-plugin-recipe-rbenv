@@ -20,11 +20,11 @@ Or install it yourself as:
 
 ## Usage
 
-System wide rbenv install
+System wide rbenv installation
 
 ### Recipe
 
-```
+```ruby
 # your recipe
 include_recipe "rbenv::system"
 ```
