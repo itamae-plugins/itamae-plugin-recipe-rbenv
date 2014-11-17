@@ -1,6 +1,6 @@
 # Itamae::Plugin::Recipe::Rbenv
 
-TODO: Write a gem description
+Itamae plugin to install ruby with rbenv
 
 ## Installation
 
@@ -20,12 +20,27 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Recipe
 
-## Contributing
+```
+# your recipe
+include_recipe "rbenv::system"
+```
 
-1. Fork it ( https://github.com/[my-github-username]/itamae-plugin-recipe-rbenv/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+### Node
+
+```yaml
+# node.yml
+rbenv:
+  global:
+    2.1.5
+  versions:
+    - 2.1.5
+    - 2.1.3
+```
+
+Use this with `itamae -y node.yml`
+
+## License
+
+MIT License

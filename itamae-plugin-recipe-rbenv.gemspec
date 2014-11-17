@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Itamae::Plugin::Recipe::Rbenv::VERSION
   spec.authors       = ["Takashi Kokubun"]
   spec.email         = ["takashikkbn@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Itamae plugin to install ruby with rbenv}
+  spec.description   = %q{Itamae plugin to install ruby with rbenv}
   spec.homepage      = ""
   spec.license       = "MIT"
 
