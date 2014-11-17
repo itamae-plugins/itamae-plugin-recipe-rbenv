@@ -1,6 +1,6 @@
 # Itamae::Plugin::Recipe::Rbenv
 
-Itamae plugin to install ruby with rbenv
+[Itamae](https://github.com/ryotarai/itamae) plugin to install ruby with rbenv
 
 ## Installation
 
