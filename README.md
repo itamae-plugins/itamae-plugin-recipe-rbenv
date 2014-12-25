@@ -37,10 +37,14 @@ Use this with `itamae -y node.yml`
 # node.yml
 rbenv:
   global:
-    2.1.5
+    2.2.0
   versions:
+    - 2.2.0
     - 2.1.5
-    - 2.1.3
+
+# revision of sstephenson/ruby-build, optional
+ruby-build:
+  revision: e455975286e44393b1b33037ae1ce40ef2742401
 ```
 
 ### .bashrc
