@@ -14,7 +14,7 @@ end
 
 git "#{RBENV_ROOT}/plugins/ruby-build" do
   repository "git://github.com/sstephenson/ruby-build.git"
-  if node[:'ruby-build'][:revision]
+  if node[:'ruby-build'] && node[:'ruby-build'][:revision]
     revision node[:'ruby-build'][:revision]
   end
 end
