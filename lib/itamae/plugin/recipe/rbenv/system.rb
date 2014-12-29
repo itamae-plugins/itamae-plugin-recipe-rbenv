@@ -1,3 +1,4 @@
+package "libffi-devel"
 package "openssl-devel"
 package "readline-devel"
 
