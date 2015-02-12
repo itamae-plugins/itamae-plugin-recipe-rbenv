@@ -1,5 +1,11 @@
+DEFAULT_RBENV_ROOT = "/usr/local/rbenv"
+
 def rbenv_root
-  node[:rbenv] && node[:rbenv][:rbenv_root] ? node[:rbenv][:rbenv_root] : "/usr/local/rbenv"
+  if node[:rbenv] && node[:rbenv][:rbenv_root]
+    node[:rbenv][:rbenv_root]
+  else
+    DEFAULT_RBENV_ROOT
+  end
 end
 
 def rbenv_init
