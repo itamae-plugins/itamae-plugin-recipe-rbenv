@@ -1,6 +1,35 @@
-package "libffi-devel"
-package "openssl-devel"
-package "readline-devel"
+# cf) https://github.com/sstephenson/ruby-build/wiki#suggested-build-environment
+case os[:family]
+when "debian", "ubuntu"
+  package "autoconf"
+  package "bison"
+  package "build-essential"
+  package "libssl-dev"
+  package "libyaml-dev"
+  package "libreadline6-dev"
+  package "zlib1g-dev"
+  package "libncurses5-dev"
+  package "libffi-dev"
+  package "libgdbm3"
+  package "libgdbm-dev"
+  package "libffi-dev"
+when "redhat", "fedora"
+  # redhat is including CentOS
+  package "gcc"
+  package "openssl-devel"
+  package "libyaml-devel"
+  package "libffi-devel"
+  package "readline-devel"
+  package "zlib-devel"
+  package "gdbm-devel"
+  package "ncurses-devel"
+  package "libffi-devel"
+else
+  # for backward compatibility (<= v0.2.1)
+  package "libffi-devel"
+  package "openssl-devel"
+  package "readline-devel"
+end
 
 require "itamae/plugin/recipe/rbenv"
 
