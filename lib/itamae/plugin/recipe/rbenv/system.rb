@@ -15,6 +15,20 @@ git "#{rbenv_root}/plugins/ruby-build" do
   end
 end
 
+git "#{rbenv_root}/plugins/rbenv-default-gems" do
+  repository "git://github.com/sstephenson/rbenv-default-gems.git"
+  if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:revision]
+    revision node[:'rbenv-default-gems'][:revision]
+  end
+end
+
+if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
+  file "#{rbenv_root}/default-gems" do
+    content node[:'rbenv-default-gems'][:'default-gems'].join("\n") + "\n"
+    mode    "664"
+  end
+end
+
 node[:rbenv][:versions].each do |version|
   execute "rbenv install #{version}" do
     command "#{rbenv_init} rbenv install #{version}"

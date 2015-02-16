@@ -48,6 +48,14 @@ rbenv:
 # revision of sstephenson/ruby-build, optional
 ruby-build:
   revision: e455975286e44393b1b33037ae1ce40ef2742401
+
+rbenv-default-gems:
+  default-gems:
+    - bundler
+    - bcat ~>0.6
+    - rails --pre
+  # revision of sstephenson/rbenv-default-gems, optional
+  revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 ```
 
 ### .bashrc
