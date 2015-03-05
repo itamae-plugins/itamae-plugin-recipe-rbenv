@@ -42,7 +42,7 @@ rbenv:
     - 2.2.0
     - 2.1.5
 
-  # rbenv install dir, optional (default: /use/local/rbenv )
+  # rbenv install dir, optional (default: /usr/local/rbenv )
   rbenv_root: "/path/to/rbenv"
 
 # revision of sstephenson/ruby-build, optional
