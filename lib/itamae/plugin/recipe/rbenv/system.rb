@@ -1,5 +1,5 @@
 # cf) https://github.com/sstephenson/ruby-build/wiki#suggested-build-environment
-case os[:family]
+case node[:platform]
 when "debian", "ubuntu"
   package "autoconf"
   package "bison"
