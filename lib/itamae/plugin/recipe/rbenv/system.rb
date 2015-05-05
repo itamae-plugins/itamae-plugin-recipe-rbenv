@@ -31,6 +31,8 @@ else
   package "readline-devel"
 end
 
+package "git"
+
 require "itamae/plugin/recipe/rbenv"
 
 git rbenv_root do
