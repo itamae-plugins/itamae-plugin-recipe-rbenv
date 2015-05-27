@@ -56,6 +56,10 @@ rbenv-default-gems:
     - rails --pre
   # revision of sstephenson/rbenv-default-gems, optional
   revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
+
+# revision of sstephenson/rbenv-gem-rehash, optional
+rbenv-gem-rehash:
+  revision: 4d7b92de4bdf549df59c3c8feb1890116d2ea985
 ```
 
 ### .bashrc

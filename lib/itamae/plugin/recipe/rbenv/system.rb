@@ -46,6 +46,13 @@ git "#{rbenv_root}/plugins/ruby-build" do
   end
 end
 
+git "#{rbenv_root}/plugins/rbenv-gem-rehash" do
+  repository "git://github.com/sstephenson/rbenv-gem-rehash.git"
+  if node[:'rbenv-gem-rehash'] && node[:'rbenv-gem-rehash'][:revision]
+    revision node[:'rbenv-gem-rehash'][:revision]
+  end
+end
+
 git "#{rbenv_root}/plugins/rbenv-default-gems" do
   repository "git://github.com/sstephenson/rbenv-default-gems.git"
   if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:revision]
