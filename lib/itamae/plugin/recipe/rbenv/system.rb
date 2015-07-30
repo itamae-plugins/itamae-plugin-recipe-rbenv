@@ -33,28 +33,31 @@ end
 
 package "git"
 
+scheme = "git"
+scheme = node[:rbenv][:scheme] if node[:rbenv][:scheme]
+
 require "itamae/plugin/recipe/rbenv"
 
 git rbenv_root do
-  repository "git://github.com/sstephenson/rbenv.git"
+  repository "#{scheme}://github.com/sstephenson/rbenv.git"
 end
 
 git "#{rbenv_root}/plugins/ruby-build" do
-  repository "git://github.com/sstephenson/ruby-build.git"
+  repository "#{scheme}://github.com/sstephenson/ruby-build.git"
   if node[:'ruby-build'] && node[:'ruby-build'][:revision]
     revision node[:'ruby-build'][:revision]
   end
 end
 
 git "#{rbenv_root}/plugins/rbenv-gem-rehash" do
-  repository "git://github.com/sstephenson/rbenv-gem-rehash.git"
+  repository "#{scheme}://github.com/sstephenson/rbenv-gem-rehash.git"
   if node[:'rbenv-gem-rehash'] && node[:'rbenv-gem-rehash'][:revision]
     revision node[:'rbenv-gem-rehash'][:revision]
   end
 end
 
 git "#{rbenv_root}/plugins/rbenv-default-gems" do
-  repository "git://github.com/sstephenson/rbenv-default-gems.git"
+  repository "#{scheme}://github.com/sstephenson/rbenv-default-gems.git"
   if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:revision]
     revision node[:'rbenv-default-gems'][:revision]
   end
