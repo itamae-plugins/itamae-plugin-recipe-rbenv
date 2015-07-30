@@ -42,8 +42,11 @@ rbenv:
     - 2.2.0
     - 2.1.5
 
-  # rbenv install dir, optional (default: /usr/local/rbenv )
+  # rbenv install dir, optional (default: /usr/local/rbenv)
   rbenv_root: "/path/to/rbenv"
+
+  # specify scheme to use in git clone (default: git)
+  scheme: https
 
 # revision of sstephenson/ruby-build, optional
 ruby-build:
