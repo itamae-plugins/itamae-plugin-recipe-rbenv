@@ -24,6 +24,10 @@ when "redhat", "fedora"
   package "gdbm-devel"
   package "ncurses-devel"
   package "libffi-devel"
+when "osx"
+  package "openssl"
+  package "libyaml"
+  package "libffi"
 else
   # for backward compatibility (<= v0.2.1)
   package "libffi-devel"
