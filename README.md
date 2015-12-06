@@ -18,9 +18,10 @@ Or install it yourself as:
 
     $ gem install itamae-plugin-recipe-rbenv
 
-## Usage
+# Usage
+## System wide installation
 
-System wide rbenv installation
+Install rbenv to /usr/local/rbenv or some shared path
 
 ### Recipe
 
@@ -73,6 +74,32 @@ Recommend to append this to .bashrc in your server.
 export RBENV_ROOT=/usr/local/rbenv
 export PATH="${RBENV_ROOT}/bin:${PATH}"
 eval "$(rbenv init -)"
+```
+
+## Installation for a user
+
+Install rbenv to `~#{node[:rbenv][:user]}/.rbenv`
+
+### Recipe
+
+```ruby
+# your recipe
+include_recipe "rbenv::user"
+```
+
+### Node
+
+Use this with `itamae -y node.yml`
+
+```yaml
+# node.yml
+rbenv:
+  user: k0kubun
+  global:
+    2.2.0
+  versions:
+    - 2.2.0
+    - 2.1.5
 ```
 
 ## License
