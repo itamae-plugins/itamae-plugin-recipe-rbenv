@@ -1,6 +1,9 @@
-# This recipe requires `rbenv_root` and `rbenv_init` are defined.
+# This recipe requires `rbenv_root` is defined.
 
-scheme = node[:rbenv][:scheme]
+include_recipe 'rbenv::dependency'
+
+scheme     = node[:rbenv][:scheme]
+rbenv_root = node[:rbenv][:rbenv_root]
 
 git rbenv_root do
   repository "#{scheme}://github.com/rbenv/rbenv.git"
@@ -30,6 +33,12 @@ if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
   end
 end
 
+rbenv_init = <<-EOS
+  export RBENV_ROOT=#{rbenv_root}
+  export PATH="#{rbenv_root}/bin:${PATH}"
+  eval "$(rbenv init --no-rehash -)"
+EOS
+
 node[:rbenv][:versions].each do |version|
   execute "rbenv install #{version}" do
     command "#{rbenv_init} rbenv install #{version}"
@@ -37,9 +46,11 @@ node[:rbenv][:versions].each do |version|
   end
 end
 
-node[:rbenv][:global].tap do |version|
-  execute "rbenv global #{version}" do
-    command "#{rbenv_init} rbenv global #{version}"
-    not_if  "#{rbenv_init} rbenv version | grep #{version}"
+if node[:rbenv][:global]
+  node[:rbenv][:global].tap do |version|
+    execute "rbenv global #{version}" do
+      command "#{rbenv_init} rbenv global #{version}"
+      not_if  "#{rbenv_init} rbenv version | grep #{version}"
+    end
   end
 end
