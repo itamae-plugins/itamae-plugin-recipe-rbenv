@@ -48,7 +48,7 @@ rbenv:
   # specify scheme to use in git clone (default: git)
   scheme: https
 
-# revision of sstephenson/ruby-build, optional
+# revision of rbenv/ruby-build, optional
 ruby-build:
   revision: e455975286e44393b1b33037ae1ce40ef2742401
 
@@ -57,10 +57,10 @@ rbenv-default-gems:
     - bundler
     - bcat ~>0.6
     - rails --pre
-  # revision of sstephenson/rbenv-default-gems, optional
+  # revision of rbenv/rbenv-default-gems, optional
   revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 
-# revision of sstephenson/rbenv-gem-rehash, optional
+# revision of rbenv/rbenv-gem-rehash, optional
 rbenv-gem-rehash:
   revision: 4d7b92de4bdf549df59c3c8feb1890116d2ea985
 ```
