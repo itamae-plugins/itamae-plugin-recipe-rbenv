@@ -91,7 +91,7 @@ include_recipe "rbenv::user"
 
 Use this with `itamae -y node.yml`
 
-```
+```yaml
 # node.yml
 rbenv:
   user: k0kubun
