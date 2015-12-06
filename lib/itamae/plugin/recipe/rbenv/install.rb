@@ -6,26 +6,20 @@ git rbenv_root do
   repository "#{scheme}://github.com/rbenv/rbenv.git"
 end
 
-git "#{rbenv_root}/plugins/ruby-build" do
-  repository "#{scheme}://github.com/rbenv/ruby-build.git"
-  if node[:'ruby-build'] && node[:'ruby-build'][:revision]
-    revision node[:'ruby-build'][:revision]
+directory File.join(rbenv_root, 'plugins')
+
+define :rbenv_plugin do
+  name = params[:name]
+
+  git "#{rbenv_root}/plugins/#{name}" do
+    repository "#{scheme}://github.com/rbenv/#{name}.git"
+    revision node[name][:revision] if node[name][:revision]
   end
 end
 
-git "#{rbenv_root}/plugins/rbenv-gem-rehash" do
-  repository "#{scheme}://github.com/rbenv/rbenv-gem-rehash.git"
-  if node[:'rbenv-gem-rehash'] && node[:'rbenv-gem-rehash'][:revision]
-    revision node[:'rbenv-gem-rehash'][:revision]
-  end
-end
-
-git "#{rbenv_root}/plugins/rbenv-default-gems" do
-  repository "#{scheme}://github.com/rbenv/rbenv-default-gems.git"
-  if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:revision]
-    revision node[:'rbenv-default-gems'][:revision]
-  end
-end
+rbenv_plugin 'ruby-build'
+rbenv_plugin 'rbenv-gem-rehash'
+rbenv_plugin 'rbenv-default-gems'
 
 if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
   file "#{rbenv_root}/default-gems" do
