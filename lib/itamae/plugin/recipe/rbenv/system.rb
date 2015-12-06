@@ -4,6 +4,9 @@ node.reverse_merge!(
   rbenv: {
     scheme: 'git',
   },
+  :'ruby-build' => {
+    install: true,
+  }
 )
 
 DEFAULT_RBENV_ROOT = '/usr/local/rbenv'

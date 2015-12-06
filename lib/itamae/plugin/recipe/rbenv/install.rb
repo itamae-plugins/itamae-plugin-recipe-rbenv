@@ -11,9 +11,11 @@ directory File.join(rbenv_root, 'plugins')
 define :rbenv_plugin do
   name = params[:name]
 
-  git "#{rbenv_root}/plugins/#{name}" do
-    repository "#{scheme}://github.com/rbenv/#{name}.git"
-    revision node[name][:revision] if node[name][:revision]
+  if node[name] && (node[name][:install] || node[name][:revision])
+    git "#{rbenv_root}/plugins/#{name}" do
+      repository "#{scheme}://github.com/rbenv/#{name}.git"
+      revision node[name][:revision] if node[name][:revision]
+    end
   end
 end
 
