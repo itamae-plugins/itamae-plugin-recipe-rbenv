@@ -1,3 +1,14 @@
+## v0.4.0
+### Added
+
+- Support user-local rbenv installation by `rbenv::user`
+- `rbenv_plugin` resource
+
+### Changed
+
+- Unused rbenv plugins are not `git clone`ed by default except ruby-build
+  - You should explicitly set `install: true` if you want
+
 ## v0.3.4
 ### Added
 

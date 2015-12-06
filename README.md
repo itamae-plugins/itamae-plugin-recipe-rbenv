@@ -61,8 +61,10 @@ rbenv-default-gems:
   # revision of rbenv/rbenv-default-gems, optional
   revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 
-# revision of rbenv/rbenv-gem-rehash, optional
+# Specify :install or :revision to install rbenv-gem-rehash
 rbenv-gem-rehash:
+  install: true
+  # or
   revision: 4d7b92de4bdf549df59c3c8feb1890116d2ea985
 ```
 
