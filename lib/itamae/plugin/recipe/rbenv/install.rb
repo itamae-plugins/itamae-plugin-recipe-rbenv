@@ -22,16 +22,17 @@ define :rbenv_plugin do
   end
 end
 
-rbenv_plugin 'ruby-build'
-rbenv_plugin 'rbenv-gem-rehash'
-rbenv_plugin 'rbenv-default-gems'
-
 if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
+  node[:'rbenv-default-gems'][:install] = true
   file "#{rbenv_root}/default-gems" do
     content node[:'rbenv-default-gems'][:'default-gems'].join("\n") + "\n"
     mode    '664'
   end
 end
+
+rbenv_plugin 'ruby-build'
+rbenv_plugin 'rbenv-gem-rehash'
+rbenv_plugin 'rbenv-default-gems'
 
 rbenv_init = <<-EOS
   export RBENV_ROOT=#{rbenv_root}
