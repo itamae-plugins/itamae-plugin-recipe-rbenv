@@ -1,3 +1,9 @@
+## v0.4.1
+### Added
+
+- rbenv's revision can be configurable with `node[:rbenv][:revision]`
+  - To utilize optimization by https://github.com/itamae-kitchen/itamae/pull/182
+
 ## v0.4.0
 ### Added
 
