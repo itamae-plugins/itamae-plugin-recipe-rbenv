@@ -7,6 +7,7 @@ rbenv_root = node[:rbenv][:rbenv_root]
 
 git rbenv_root do
   repository "#{scheme}://github.com/rbenv/rbenv.git"
+  revision node[:rbenv][:revision] if node[:rbenv][:revision]
 end
 
 directory File.join(rbenv_root, 'plugins')
