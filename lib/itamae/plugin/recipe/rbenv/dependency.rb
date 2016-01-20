@@ -14,6 +14,7 @@ when 'debian', 'ubuntu'
   package 'zlib1g-dev'
 when 'redhat', 'fedora'
   # redhat is including CentOS
+  package 'bzip2'
   package 'gcc'
   package 'gdbm-devel'
   package 'libffi-devel'
