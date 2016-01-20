@@ -1,3 +1,12 @@
+## v0.5.0
+### Added
+
+- Add support for Arch Linux, Linux Mint, OpenSUSE
+
+### Fixed
+
+- Add missing bzip2 dependency for RedHat, CentOS, Fedora
+
 ## v0.4.1
 ### Added
 
