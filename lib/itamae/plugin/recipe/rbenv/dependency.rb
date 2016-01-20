@@ -28,7 +28,9 @@ when 'osx', 'darwin'
   package 'libyaml'
   package 'openssl'
 when 'arch'
-  package 'base-devel'
+  package 'base-devel' do
+    not_if 'pacman -Qg base-devel'
+  end
   package 'libffi'
   package 'libyaml'
   package 'openssl'
