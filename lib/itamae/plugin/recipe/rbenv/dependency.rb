@@ -26,6 +26,12 @@ when 'osx', 'darwin'
   package 'libffi'
   package 'libyaml'
   package 'openssl'
+when 'arch'
+  package 'base-devel'
+  package 'libffi'
+  package 'libyaml'
+  package 'openssl'
+  package 'zlib'
 else
   # for backward compatibility (<= v0.2.1)
   package 'libffi-devel'
