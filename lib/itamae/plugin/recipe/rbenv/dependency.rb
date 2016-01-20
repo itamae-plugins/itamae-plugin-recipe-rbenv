@@ -1,6 +1,6 @@
 # cf) https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 case node[:platform]
-when 'debian', 'ubuntu'
+when 'debian', 'ubuntu', 'mint'
   package 'autoconf'
   package 'bison'
   package 'build-essential'
