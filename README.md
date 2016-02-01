@@ -53,19 +53,15 @@ rbenv:
 ruby-build:
   revision: e455975286e44393b1b33037ae1ce40ef2742401
 
+# Optional plugin. Specify :install or :revision to install rbenv-default-gems
 rbenv-default-gems:
   default-gems:
     - bundler
     - bcat ~>0.6
     - rails --pre
-  # revision of rbenv/rbenv-default-gems, optional
-  revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
-
-# Specify :install or :revision to install rbenv-gem-rehash
-rbenv-gem-rehash:
   install: true
   # or
-  revision: 4d7b92de4bdf549df59c3c8feb1890116d2ea985
+  revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 ```
 
 ### .bashrc

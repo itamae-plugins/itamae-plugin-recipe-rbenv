@@ -32,7 +32,6 @@ if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
 end
 
 rbenv_plugin 'ruby-build'
-rbenv_plugin 'rbenv-gem-rehash'
 rbenv_plugin 'rbenv-default-gems'
 
 rbenv_init = <<-EOS
