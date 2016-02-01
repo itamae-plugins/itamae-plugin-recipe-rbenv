@@ -1,3 +1,12 @@
+## v0.6.0
+### Changed
+
+- Drop support for rbenv-gem-rehash since it's merged to rbenv core
+  - See: https://github.com/rbenv/rbenv/pull/638
+- Don't check base-devel group installation for Arch Linux
+  - It's unnecessary for specinfra >= 2.50.2
+  - See: https://github.com/mizzy/specinfra/pull/517
+
 ## v0.5.0
 ### Added
 
