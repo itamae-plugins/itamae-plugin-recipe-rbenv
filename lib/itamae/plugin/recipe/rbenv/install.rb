@@ -11,6 +11,9 @@ git rbenv_root do
 end
 
 directory File.join(rbenv_root, 'plugins')
+if node[:rbenv][:cache]
+  directory File.join(rbenv_root, 'cache')
+end
 
 define :rbenv_plugin do
   name = params[:name]

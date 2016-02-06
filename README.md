@@ -46,8 +46,12 @@ rbenv:
   # rbenv install dir, optional (default: /usr/local/rbenv)
   rbenv_root: "/path/to/rbenv"
 
-  # specify scheme to use in git clone (default: git)
+  # specify scheme to use in git clone, optional (default: git)
   scheme: https
+
+  # Create /usr/local/rbenv/cache, optional (default: false)
+  # See: https://github.com/rbenv/ruby-build#package-download-caching
+  cache: true
 
 # ruby-build is always installed. Specifying revision improves performance.
 ruby-build:
@@ -94,10 +98,31 @@ Use this with `itamae -y node.yml`
 rbenv:
   user: k0kubun
   global:
-    2.2.0
+    2.3.0
   versions:
-    - 2.2.0
-    - 2.1.5
+    - 2.3.0
+    - 2.2.4
+
+  # specify scheme to use in git clone, optional (default: git)
+  scheme: https
+
+  # Create ~/.rbenv/cache, optional (default: false)
+  # See: https://github.com/rbenv/ruby-build#package-download-caching
+  cache: true
+
+# ruby-build is always installed. Specifying revision improves performance.
+ruby-build:
+  revision: e455975286e44393b1b33037ae1ce40ef2742401
+
+# Optional plugin. Specify :install or :revision to install rbenv-default-gems.
+rbenv-default-gems:
+  default-gems:
+    - bundler
+    - bcat ~>0.6
+    - rails --pre
+  install: true
+  # or
+  revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 ```
 
 ## License
