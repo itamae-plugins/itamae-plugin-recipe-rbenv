@@ -1,3 +1,10 @@
+## v0.6.1
+### Added
+
+- Support package download caching
+  - Set `node[:rbenv][:cache]` true
+  - See: https://github.com/rbenv/ruby-build#package-download-caching
+
 ## v0.6.0
 ### Changed
 
