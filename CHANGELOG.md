@@ -1,3 +1,9 @@
+## v0.6.2
+### Fixed
+
+- Fix the owner of user repository to rbenv:user [#13](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/13).
+  *Thanks to @iyuuya*
+
 ## v0.6.1
 ### Added
 
