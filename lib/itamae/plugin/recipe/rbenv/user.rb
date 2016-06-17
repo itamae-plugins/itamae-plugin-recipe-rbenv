@@ -6,6 +6,7 @@ node.reverse_merge!(
   },
   :'ruby-build' => {
     install: true,
+    build_envs: [],
   }
 )
 

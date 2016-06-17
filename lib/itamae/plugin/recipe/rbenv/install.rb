@@ -51,9 +51,13 @@ rbenv_init = <<-EOS
   eval "$(rbenv init --no-rehash -)"
 EOS
 
+build_envs = node[:'ruby-build'][:build_envs].map do |key, value|
+  %Q[export #{key}="#{value}"\n]
+end.join
+
 node[:rbenv][:versions].each do |version|
   execute "rbenv install #{version}" do
-    command "#{rbenv_init} rbenv install #{version}"
+    command "#{rbenv_init} #{build_envs} rbenv install #{version}"
     not_if  "#{rbenv_init} rbenv versions | grep #{version}"
     user node[:rbenv][:user] if node[:rbenv][:user]
   end
