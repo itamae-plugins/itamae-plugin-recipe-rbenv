@@ -33,6 +33,8 @@ define :rbenv_plugin do
 end
 
 if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
+  rbenv_plugin 'rbenv-default-gems'
+
   node[:'rbenv-default-gems'][:install] = true
   file "#{rbenv_root}/default-gems" do
     content node[:'rbenv-default-gems'][:'default-gems'].join("\n") + "\n"
@@ -42,7 +44,6 @@ if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
 end
 
 rbenv_plugin 'ruby-build'
-rbenv_plugin 'rbenv-default-gems'
 
 rbenv_init = <<-EOS
   export RBENV_ROOT=#{rbenv_root}
