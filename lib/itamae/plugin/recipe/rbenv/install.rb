@@ -39,7 +39,10 @@ if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
   file "#{rbenv_root}/default-gems" do
     content node[:'rbenv-default-gems'][:'default-gems'].join("\n") + "\n"
     mode    '664'
-    user node[:rbenv][:user] if node[:rbenv][:user]
+    if node[:rbenv][:user]
+      owner node[:rbenv][:user]
+      group node[:rbenv][:group] || node[:rbenv][:user]
+    end
   end
 end
 
