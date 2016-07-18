@@ -1,3 +1,8 @@
+## v0.6.3
+### Fixed
+- Fix the group of default-gems file [#14](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/14).
+  *Thanks to @iyuuya*
+
 ## v0.6.2
 ### Fixed
 
