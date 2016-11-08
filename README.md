@@ -125,6 +125,25 @@ rbenv-default-gems:
   revision: ead67889c91c53ad967f85f5a89d986fdb98f6fb
 ```
 
+## MItamae
+
+This plugin can be used for MItamae too. Put this repository under `./plugins` as git submodule.
+
+```rb
+node.reverse_merge!(
+  rbenv: {
+    user: 'k0kubun',
+    global: '2.3.1',
+    versions: %w[
+      2.3.1
+      2.2.5
+    ],
+  }
+)
+
+include_recipe "rbenv::user"
+```
+
 ## License
 
 MIT License
