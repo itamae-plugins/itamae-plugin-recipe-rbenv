@@ -12,7 +12,7 @@ when 'debian', 'ubuntu', 'mint'
   package 'libssl-dev'
   package 'libyaml-dev'
   package 'zlib1g-dev'
-when 'redhat', 'fedora'
+when 'redhat', 'fedora', 'amazon'
   # redhat is including CentOS
   package 'bzip2'
   package 'gcc'
