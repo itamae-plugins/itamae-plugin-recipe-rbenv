@@ -1,3 +1,8 @@
+## v0.6.4
+### Added
+- Suport Amazon Linux [#16](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/16)
+  *Thanks to @kawakubox*
+
 ## v0.6.3
 ### Fixed
 - Fix the group of default-gems file [#14](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/14).
