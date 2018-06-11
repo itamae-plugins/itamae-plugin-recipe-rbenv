@@ -1,3 +1,8 @@
+## v0.6.6
+### Fixed
+- Support installing 2.1.10 when 2.1.1 is installed as well [#17](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/17)
+  *Thanks to @chiastolite*
+
 ## v0.6.5
 ### Fixed
 - Support Ubuntu 18.04 [#18](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/18)
