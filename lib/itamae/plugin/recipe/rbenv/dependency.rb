@@ -6,7 +6,7 @@ when 'debian', 'ubuntu', 'mint'
   package 'build-essential'
   package 'libffi-dev'
   package 'libgdbm-dev'
-  if node[:platform_version] == '18.04'
+  if node[:platform_version] >= '18.04'
     package 'libgdbm5'
     package 'libreadline-dev'
   else
