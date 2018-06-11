@@ -1,3 +1,8 @@
+## v0.6.5
+### Fixed
+- Support Ubuntu 18.04 [#18](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/18)
+  *Thanks to @swanmatch*
+
 ## v0.6.4
 ### Added
 - Suport Amazon Linux [#16](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/16)
