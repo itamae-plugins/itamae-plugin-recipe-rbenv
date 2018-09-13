@@ -1,3 +1,8 @@
+## v0.6.7
+### Fixed
+- Fix package installation error on Debian [#19](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/19)
+  *Thanks to @hanachin*
+
 ## v0.6.6
 ### Fixed
 - Support installing 2.1.10 when 2.1.1 is installed as well [#17](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/17)
