@@ -1,3 +1,8 @@
+## v0.6.8
+### Added
+- Add `install_dependency` node option [#20](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/20)
+  *Thanks to @sue445*
+
 ## v0.6.7
 ### Fixed
 - Fix package installation error on Debian [#19](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/19)
