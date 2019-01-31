@@ -1,6 +1,8 @@
 # This recipe requires `rbenv_root` is defined.
 
-include_recipe 'rbenv::dependency'
+if node[:rbenv][:install_dependency]
+  include_recipe 'rbenv::dependency'
+end
 
 scheme     = node[:rbenv][:scheme]
 rbenv_root = node[:rbenv][:rbenv_root]

@@ -3,6 +3,7 @@ node.reverse_merge!(
     scheme:   'git',
     user:     ENV['USER'],
     versions: [],
+    install_dependency: true,
   },
   :'ruby-build' => {
     install: true,
