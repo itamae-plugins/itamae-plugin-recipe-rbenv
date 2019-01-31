@@ -3,6 +3,7 @@ node.reverse_merge!(
     rbenv_root: '/usr/local/rbenv',
     scheme:     'git',
     versions:   [],
+    install_dependency: true,
   },
   :'ruby-build' => {
     install: true,
