@@ -1,4 +1,4 @@
-language: ruby
+language: c
 services:
   - docker
 env:
