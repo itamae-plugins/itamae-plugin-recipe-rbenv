@@ -22,12 +22,13 @@ if node[:rbenv][:cache]
   end
 end
 
-define :rbenv_plugin do
+define :rbenv_plugin, group: 'rbenv' do
   name = params[:name]
+  group = params[:group]
 
   if node[name] && (node[name][:install] || node[name][:revision])
     git "#{rbenv_root}/plugins/#{name}" do
-      repository "#{scheme}://github.com/rbenv/#{name}.git"
+      repository "#{scheme}://github.com/#{group}/#{name}.git"
       revision node[name][:revision] if node[name][:revision]
       user node[:rbenv][:user] if node[:rbenv][:user]
     end
@@ -74,6 +75,17 @@ if node[:rbenv][:global]
       command "#{rbenv_init} rbenv global #{version}"
       not_if  "#{rbenv_init} rbenv version --bare | grep -x #{version}"
       user node[:rbenv][:user] if node[:rbenv][:user]
+    end
+  end
+end
+
+node[:rbenv][:plugins].tap do |plugins|
+  next unless plugins
+
+  plugins.each do |plugin|
+    grp = node[plugin][:group]
+    rbenv_plugin plugin do
+      group grp if grp
     end
   end
 end
