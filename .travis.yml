@@ -1,7 +1,8 @@
 language: ruby
 services:
   - docker
-
+env:
+  - mitamae_version="1.7.1"
 script:
   # download mitamae
   - curl -o "/tmp/mitamae-x86_64-linux.tar.gz" -fL "https://github.com/k0kubun/mitamae/releases/download/v${mitamae_version}/mitamae-x86_64-linux.tar.gz"
@@ -31,6 +32,3 @@ script:
   - |
     docker run -it -v "$(pwd):/plugins/itamae-plugin-recipe-rbenv" -v "/tmp:/travis" ubuntu:18.04 \
       bash -c "cd / && /travis/mitamae local -y /travis/node.yml /travis/default.rb"
-
-env:
-  - mitamae_version="1.7.1"
