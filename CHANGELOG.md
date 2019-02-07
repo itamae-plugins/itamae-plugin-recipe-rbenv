@@ -1,3 +1,8 @@
+## v0.6.9
+### Added
+- Add `node[:rbenv][:plugins]` to install arbitrary rbenv plugins [#21](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/21)
+  *Thanks to @Yuki-Inoue*
+
 ## v0.6.8
 ### Added
 - Add `install_dependency` node option [#20](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/20)
