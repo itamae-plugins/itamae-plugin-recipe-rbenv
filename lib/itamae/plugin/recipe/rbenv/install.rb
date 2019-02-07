@@ -22,7 +22,7 @@ if node[:rbenv][:cache]
   end
 end
 
-define :rbenv_plugin, group: :rbenv do
+define :rbenv_plugin, group: 'rbenv' do
   name = params[:name]
   group = params[:group]
 
@@ -83,13 +83,9 @@ node[:rbenv][:plugins].tap do |plugins|
   next unless plugins
 
   plugins.each do |plugin|
-    case plugin
-    when String
-      rbenv_plugin plugin
-    else
-      rbenv_plugin plugin[:name] do
-        group plugin[:group]
-      end
+    grp = node[plugin][:group]
+    rbenv_plugin plugin do
+      group grp if grp
     end
   end
 end
