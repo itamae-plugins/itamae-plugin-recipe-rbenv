@@ -1,5 +1,6 @@
 node.reverse_merge!(
   rbenv: {
+    plugins:  {},
     scheme:   'git',
     user:     ENV['USER'],
     versions: [],

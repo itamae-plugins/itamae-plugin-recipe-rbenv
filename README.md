@@ -57,6 +57,11 @@ rbenv:
   # Recommend false if `--no-sudo`
   install_dependency: true
 
+  # Install arbitrary rbenv plugins, optional (default: [])
+  plugins:
+    dcarley/rbenv-sudo:
+      revision: master
+
 # ruby-build is always installed. Specifying revision improves performance.
 ruby-build:
   revision: e455975286e44393b1b33037ae1ce40ef2742401

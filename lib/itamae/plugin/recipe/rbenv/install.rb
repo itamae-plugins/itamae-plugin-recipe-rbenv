@@ -84,13 +84,15 @@ if node[:rbenv][:global]
   end
 end
 
-node[:rbenv][:plugins].tap do |plugins|
-  next unless plugins
+node[:rbenv][:plugins].each do |name, options|
+  if name.include?('/')
+    owner, repo = spec.split('/', 2)
+  else
+    owner, repo = 'rbenv', name
+  end
 
-  plugins.each do |plugin|
-    grp = node[plugin][:group]
-    rbenv_plugin plugin do
-      group grp if grp
-    end
+  rbenv_plugin repo do
+    group owner
+    revision options[:revision]
   end
 end
