@@ -87,7 +87,9 @@ node[:rbenv][:plugins].tap do |plugins|
     when String
       rbenv_plugin plugin
     else
-      rbenv_plugin plugin[:name], group: plugin[:group]
+      rbenv_plugin plugin[:name] do
+        group plugin[:group]
+      end
     end
   end
 end
