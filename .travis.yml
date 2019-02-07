@@ -16,7 +16,6 @@ script:
         2.6.1
       versions:
         - 2.6.1
-        - 2.5.3
     YAML
 
   # prepare recipe for testing
