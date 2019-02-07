@@ -22,21 +22,24 @@ if node[:rbenv][:cache]
   end
 end
 
-define :rbenv_plugin, group: 'rbenv' do
+define :rbenv_plugin, group: 'rbenv', revision: nil do
   name = params[:name]
   group = params[:group]
+  rev = params[:revision]
 
   if node[name] && (node[name][:install] || node[name][:revision])
     git "#{rbenv_root}/plugins/#{name}" do
       repository "#{scheme}://github.com/#{group}/#{name}.git"
-      revision node[name][:revision] if node[name][:revision]
+      revision rev if rev
       user node[:rbenv][:user] if node[:rbenv][:user]
     end
   end
 end
 
 if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
-  rbenv_plugin 'rbenv-default-gems'
+  rbenv_plugin 'rbenv-default-gems' do
+    revision node[:'rbenv-default-gems'][:revision]
+  end
 
   node[:'rbenv-default-gems'][:install] = true
   file "#{rbenv_root}/default-gems" do
@@ -49,7 +52,9 @@ if node[:'rbenv-default-gems'] && node[:'rbenv-default-gems'][:'default-gems']
   end
 end
 
-rbenv_plugin 'ruby-build'
+rbenv_plugin 'ruby-build' do
+  revision node[:'ruby-build'][:revision]
+end
 
 rbenv_init = <<-EOS
   export RBENV_ROOT=#{rbenv_root}
