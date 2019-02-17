@@ -18,7 +18,9 @@ script:
       versions:
         - 2.6.1
       plugins:
-        dcarley/rbenv-sudo:
+        rbenv-each:
+          revision: master
+        rkh/rbenv-update:
           revision: master
     ruby-build:
       revision: master
