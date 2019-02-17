@@ -17,6 +17,15 @@ script:
         2.6.1
       versions:
         - 2.6.1
+      plugins:
+        dcarley/rbenv-sudo:
+          revision: master
+    ruby-build:
+      revision: master
+    rbenv-default-gems:
+      default-gems:
+        - bundler
+      install: true
     YAML
 
   # prepare recipe for testing
