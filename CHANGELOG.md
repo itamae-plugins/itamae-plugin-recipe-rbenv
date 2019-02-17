@@ -1,3 +1,8 @@
+## v0.6.10
+### Fixed
+- Fix undefined variable error and installation requirement in `node[:rbenv][:plugins]` feature [#23](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/23)
+  *Thanks to @mozamimy*
+
 ## v0.6.9
 ### Added
 - Add `node[:rbenv][:plugins]` to install arbitrary rbenv plugins [#21](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/21)
