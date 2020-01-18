@@ -85,7 +85,7 @@ if node[:rbenv][:global]
   node[:rbenv][:global].tap do |version|
     execute "rbenv global #{version}" do
       command "#{rbenv_init} rbenv global #{version}"
-      not_if  "#{rbenv_init} rbenv version --bare | grep -x #{version}"
+      not_if  "#{rbenv_init} rbenv global | grep -x #{version}"
       user node[:rbenv][:user] if node[:rbenv][:user]
     end
   end
