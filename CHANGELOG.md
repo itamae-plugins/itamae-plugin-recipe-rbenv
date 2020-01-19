@@ -1,3 +1,8 @@
+## v0.6.11
+### Fixed
+- Avoid unnecessary `rbenv global` [#24](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/24)
+  *Thanks to @pocke*
+
 ## v0.6.10
 ### Fixed
 - Fix undefined variable error and installation requirement in `node[:rbenv][:plugins]` feature [#23](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/23)
