@@ -1,3 +1,7 @@
+## v0.7.0
+- [breaking change] Raise NotImplementedError on an unknown platform
+- Initial support of OpenBSD
+
 ## v0.6.11
 ### Fixed
 - Avoid unnecessary `rbenv global` [#24](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/24)
