@@ -48,6 +48,14 @@ when 'opensuse'
   package 'openssl-devel'
   package 'readline-devel'
   package 'zlib-devel'
+when 'openbsd'
+  package 'autoconf'
+  package 'bison'
+  package 'gdbm'
+  package 'libffi'
+  package 'libyaml'
+  package 'openssl'
+  package 'readline'
 else
   raise NotImplementedError, "Platform '#{node[:platform]}' is not supported by rbenv::dependency yet"
 end
