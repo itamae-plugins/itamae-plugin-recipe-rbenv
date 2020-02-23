@@ -49,10 +49,7 @@ when 'opensuse'
   package 'readline-devel'
   package 'zlib-devel'
 else
-  # for backward compatibility (<= v0.2.1)
-  package 'libffi-devel'
-  package 'openssl-devel'
-  package 'readline-devel'
+  raise NotImplementedError, "Platform '#{node[:platform]}' is not supported by rbenv::dependency yet"
 end
 
 package 'git'
