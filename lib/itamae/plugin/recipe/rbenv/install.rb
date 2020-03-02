@@ -1,5 +1,8 @@
 # This recipe requires `rbenv_root` is defined.
 
+if node[:rbenv][:install_development_dependency]
+  include_recipe 'rbenv::development_dependency'
+end
 if node[:rbenv][:install_dependency]
   include_recipe 'rbenv::dependency'
 end

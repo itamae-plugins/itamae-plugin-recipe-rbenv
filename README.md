@@ -119,9 +119,12 @@ rbenv:
   # See: https://github.com/rbenv/ruby-build#package-download-caching
   cache: true
 
-  # Whether install dependencies (default: true)
+  # Install build dependencies or not (default: true)
   # Recommend false if `--no-sudo`
   install_dependency: true
+
+  # Install dependencies to build *-dev or not (default: false)
+  install_development_dependency: false
 
 # ruby-build is always installed. Specifying revision improves performance.
 ruby-build:

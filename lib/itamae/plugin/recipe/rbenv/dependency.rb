@@ -1,8 +1,7 @@
-# cf) https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+# Dependencies to install x.y.z (see also: development_dependency.rb)
+# https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 case node[:platform]
 when 'debian', 'ubuntu', 'mint'
-  package 'autoconf'
-  package 'bison'
   package 'build-essential'
   package 'libffi-dev'
   package 'libgdbm-dev'
@@ -20,10 +19,7 @@ when 'debian', 'ubuntu', 'mint'
   package 'libssl-dev'
   package 'libyaml-dev'
   package 'zlib1g-dev'
-when 'redhat', 'fedora', 'amazon'
-  # redhat is including CentOS
-  package 'autoconf'
-  package 'bison'
+when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'bzip2'
   package 'gcc'
   package 'make'
@@ -45,7 +41,6 @@ when 'arch'
   package 'openssl'
   package 'zlib'
 when 'opensuse'
-  package 'automake'
   package 'gcc'
   package 'gdbm-devel'
   package 'libffi-devel'
@@ -55,8 +50,6 @@ when 'opensuse'
   package 'readline-devel'
   package 'zlib-devel'
 when 'openbsd'
-  package 'autoconf'
-  package 'bison'
   package 'gdbm'
   package 'libffi'
   package 'libyaml'
@@ -67,4 +60,3 @@ else
 end
 
 package 'git'
-package 'subversion'

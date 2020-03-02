@@ -5,6 +5,7 @@ node.reverse_merge!(
     scheme:     'git',
     versions:   [],
     install_dependency: true,
+    install_development_dependency: false,
   },
   :'ruby-build' => {
     install: true,
