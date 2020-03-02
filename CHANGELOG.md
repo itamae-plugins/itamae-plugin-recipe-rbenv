@@ -1,3 +1,7 @@
+## v0.8.0
+### Changed
+- [breaking change] Optionalize development dependencies. Set `install_development_dependency: true` to enable them.
+
 ## v0.7.3
 ### Added
 - Support Debian 10 buster
