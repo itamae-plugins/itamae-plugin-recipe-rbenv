@@ -1,4 +1,11 @@
+## v0.7.1
+### Added
+- Install `make` on RedHat platforms [#25](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/25)
+  *Thanks to @hsbt*
+
+
 ## v0.7.0
+### Changed
 - [breaking change] Raise NotImplementedError on an unknown platform
 - Initial support of OpenBSD
 
