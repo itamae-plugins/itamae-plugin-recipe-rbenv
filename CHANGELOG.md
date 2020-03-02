@@ -1,3 +1,8 @@
+## v0.7.3
+### Added
+- Support Debian 10 buster
+- Install subversion for source build dependency
+
 ## v0.7.2
 ### Added
 - Install `autoconf` and `bison` on RedHat platforms [#26](https://github.com/k0kubun/itamae-plugin-recipe-rbenv/pull/26)
