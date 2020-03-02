@@ -21,6 +21,7 @@ when 'redhat', 'fedora', 'amazon'
   # redhat is including CentOS
   package 'bzip2'
   package 'gcc'
+  package 'make'
   package 'gdbm-devel'
   package 'libffi-devel'
   package 'libyaml-devel'
