@@ -64,3 +64,4 @@ else
 end
 
 package 'git'
+package 'subversion'
