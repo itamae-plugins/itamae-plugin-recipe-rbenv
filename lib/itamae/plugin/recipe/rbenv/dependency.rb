@@ -19,6 +19,8 @@ when 'debian', 'ubuntu', 'mint'
   package 'zlib1g-dev'
 when 'redhat', 'fedora', 'amazon'
   # redhat is including CentOS
+  package 'autoconf'
+  package 'bison'
   package 'bzip2'
   package 'gcc'
   package 'make'
