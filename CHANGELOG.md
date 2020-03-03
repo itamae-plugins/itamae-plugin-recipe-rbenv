@@ -1,3 +1,7 @@
+## v0.8.1
+### Added
+- Support Debian Testing
+
 ## v0.8.0
 ### Changed
 - [breaking change] Optionalize development dependencies. Set `install_development_dependency: true` to enable them.
