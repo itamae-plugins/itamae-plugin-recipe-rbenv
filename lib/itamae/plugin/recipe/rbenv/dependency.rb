@@ -8,7 +8,7 @@ when 'debian', 'ubuntu', 'mint'
   if node[:platform] == 'ubuntu' && node[:platform_version] >= '18.04'
     package 'libgdbm5'
     package 'libreadline-dev'
-  elsif node[:platform] == 'debian' && node[:platform_version].to_f >= 10.0
+  elsif node[:platform] == 'debian' && (node[:platform_version].to_f >= 10.0 || node[:platform_version].include?("testing"))
     package 'libgdbm6'
     package 'libreadline-dev'
   else
