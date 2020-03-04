@@ -1,3 +1,7 @@
+## v0.8.2
+- Support Ubuntu 20.04
+- Support Gentoo
+
 ## v0.8.1
 ### Added
 - Support Debian Testing
