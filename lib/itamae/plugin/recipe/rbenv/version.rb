@@ -2,7 +2,7 @@ module Itamae
   module Plugin
     module Recipe
       module Rbenv
-        VERSION = "0.8.4"
+        VERSION = "0.8.5"
       end
     end
   end

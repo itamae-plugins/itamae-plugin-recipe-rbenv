@@ -1,3 +1,7 @@
+## v0.8.5
+### Added
+- Install missing dependencies for openSUSE leap 15
+
 ## v0.8.4
 ### Added
 - Install missing dependencies on openSUSE leap
