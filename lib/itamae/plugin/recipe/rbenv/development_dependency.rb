@@ -13,6 +13,7 @@ when 'arch'
   # none
 when 'opensuse'
   package 'automake'
+  package 'bison'
 when 'gentoo'
   package 'autoconf'
   package 'bison'
