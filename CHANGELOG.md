@@ -1,4 +1,9 @@
+## v0.8.3
+### Added
+- support FreeBSD and OpenBSD
+
 ## v0.8.2
+### Added
 - Support Ubuntu 20.04
 - Support Gentoo
 
