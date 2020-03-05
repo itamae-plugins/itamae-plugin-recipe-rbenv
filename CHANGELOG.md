@@ -1,3 +1,7 @@
+## v0.8.4
+### Added
+- Install missing dependencies on openSUSE leap
+
 ## v0.8.3
 ### Added
 - support FreeBSD and OpenBSD
