@@ -28,7 +28,7 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'make'
   package 'gdbm-devel'
   package 'libffi-devel'
-  package 'libyaml-devel'
+  package 'libyaml-devel' if node[:platform_version].to_f < 8.0
   package 'ncurses-devel'
   package 'openssl-devel'
   package 'readline-devel'
