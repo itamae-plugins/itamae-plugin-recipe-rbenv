@@ -1,3 +1,7 @@
+## v0.8.6
+### Fixed
+- Skip installing libyaml-devel on CentOS / RedHat 8+
+
 ## v0.8.5
 ### Added
 - Install missing dependencies for openSUSE leap 15
