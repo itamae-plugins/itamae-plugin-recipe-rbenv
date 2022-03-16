@@ -2,7 +2,7 @@ node.reverse_merge!(
   rbenv: {
     plugins:    {},
     rbenv_root: '/usr/local/rbenv',
-    scheme:     'git',
+    scheme:     'https',
     versions:   [],
     install_dependency: true,
     install_development_dependency: false,
