@@ -1,7 +1,7 @@
 node.reverse_merge!(
   rbenv: {
     plugins:  {},
-    scheme:   'git',
+    scheme:   'https',
     user:     ENV['USER'],
     versions: [],
     install_dependency: true,

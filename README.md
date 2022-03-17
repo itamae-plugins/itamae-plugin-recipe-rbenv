@@ -46,8 +46,8 @@ rbenv:
   # rbenv install dir, optional (default: /usr/local/rbenv)
   rbenv_root: "/path/to/rbenv"
 
-  # specify scheme to use in git clone, optional (default: git)
-  scheme: https
+  # specify scheme to use in git clone, optional (default: https)
+  scheme: git
 
   # Create /usr/local/rbenv/cache, optional (default: false)
   # See: https://github.com/rbenv/ruby-build#package-download-caching
@@ -112,8 +112,8 @@ rbenv:
     - 2.3.0
     - 2.2.4
 
-  # specify scheme to use in git clone, optional (default: git)
-  scheme: https
+  # specify scheme to use in git clone, optional (default: https)
+  scheme: git
 
   # Create ~/.rbenv/cache, optional (default: false)
   # See: https://github.com/rbenv/ruby-build#package-download-caching
