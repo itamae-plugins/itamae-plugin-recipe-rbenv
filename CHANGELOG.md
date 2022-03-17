@@ -1,3 +1,7 @@
+## v0.9.0
+### Changed
+- [breaking change] Default `scheme` was changed from git to https
+
 ## v0.8.6
 ### Fixed
 - Skip installing libyaml-devel on CentOS / RedHat 8+
