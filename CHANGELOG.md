@@ -1,3 +1,7 @@
+## v0.9.1
+### Added
+- Added gmp and rustc as dependencies
+
 ## v0.9.0
 ### Changed
 - [breaking change] Default `scheme` was changed from git to https
