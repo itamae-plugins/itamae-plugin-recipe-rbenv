@@ -1,4 +1,4 @@
-# Itamae::Plugin::Recipe::Rbenv [![Build Status](https://travis-ci.org/k0kubun/itamae-plugin-recipe-rbenv.svg?branch=master)](https://travis-ci.org/k0kubun/itamae-plugin-recipe-rbenv)
+# Itamae::Plugin::Recipe::Rbenv
 
 [Itamae](https://github.com/ryotarai/itamae) plugin to install ruby with rbenv
 
