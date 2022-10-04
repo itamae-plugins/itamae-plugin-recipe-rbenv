@@ -31,7 +31,7 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'gdbm-devel'
   package 'gmp-devel'
   package 'libffi-devel'
-  if node[:patform] == 'redhat' && node[:platform_version].to_f < 8.0
+  if node[:platform] == 'redhat' && node[:platform_version].to_f < 8.0
     package 'libyaml-devel'
   else
     # rust package only provide after rhel 8
