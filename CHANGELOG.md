@@ -1,3 +1,7 @@
+## v0.9.3
+### Fixed
+- Fixed a bug in CentOS's version check
+
 ## v0.9.2
 ### Fixed
 - Fixed the condition to install rust on CentOS
