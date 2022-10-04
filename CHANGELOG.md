@@ -1,3 +1,7 @@
+## v0.9.2
+### Fixed
+- Fixed the condition to install rust on CentOS
+
 ## v0.9.1
 ### Added
 - Added gmp and rustc as dependencies
