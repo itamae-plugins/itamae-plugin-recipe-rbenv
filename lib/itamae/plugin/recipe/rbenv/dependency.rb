@@ -33,11 +33,13 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'libffi-devel'
   if node[:patform] == 'redhat' && node[:platform_version].to_f < 8.0
     package 'libyaml-devel'
+  else
+    # rust package only provide after rhel 8
+    package 'rust' # for yjit
   end
   package 'ncurses-devel'
   package 'openssl-devel'
   package 'readline-devel'
-  package 'rust' # for yjit
   package 'zlib-devel'
 when 'osx', 'darwin'
   package 'libffi'
