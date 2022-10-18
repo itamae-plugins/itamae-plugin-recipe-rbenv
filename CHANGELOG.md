@@ -1,3 +1,7 @@
+## v0.9.4
+### Fixed
+- Fixed CentOS 7- to install libyaml-devel
+
 ## v0.9.3
 ### Fixed
 - Fixed a bug in CentOS's version check
