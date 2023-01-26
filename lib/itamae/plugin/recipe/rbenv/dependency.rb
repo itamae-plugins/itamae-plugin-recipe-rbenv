@@ -28,9 +28,7 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'bzip2'
   package 'gcc'
   package 'make'
-  if node[:platform] == 'redhat' && node[:platform_version].to_f < 9.0
-    package 'gdbm-devel'
-  end
+  package 'gdbm-devel'
   package 'gmp-devel'
   package 'libffi-devel'
   package 'libyaml-devel'
