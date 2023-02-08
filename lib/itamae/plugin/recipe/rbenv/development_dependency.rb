@@ -1,7 +1,7 @@
 # Dependencies to install x.y.z-dev (see also: dependency.rb)
 # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 case node[:platform]
-when 'debian', 'ubuntu', 'mint'
+when 'debian', 'ubuntu', 'mint', 'raspbian'
   package 'autoconf'
   package 'bison'
 when 'redhat', 'fedora', 'amazon' # redhad includes CentOS

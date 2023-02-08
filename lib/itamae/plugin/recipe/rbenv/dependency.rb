@@ -1,7 +1,7 @@
 # Dependencies to install x.y.z (see also: development_dependency.rb)
 # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 case node[:platform]
-when 'debian', 'ubuntu', 'mint'
+when 'debian', 'ubuntu', 'mint', 'raspbian'
   package 'build-essential'
   package 'libffi-dev'
   package 'libgdbm-dev'
@@ -12,6 +12,9 @@ when 'debian', 'ubuntu', 'mint'
       package 'libgdbm5'
       package 'libreadline-dev'
   elsif node[:platform] == 'debian' && (node[:platform_version].to_f >= 10.0 || node[:platform_version].include?("testing"))
+    package 'libgdbm6'
+    package 'libreadline-dev'
+  elsif node[:platform] == 'raspbian'
     package 'libgdbm6'
     package 'libreadline-dev'
   else
