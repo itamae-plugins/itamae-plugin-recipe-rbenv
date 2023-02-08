@@ -1,3 +1,7 @@
+## v0.9.5
+### Added
+- Supported Raspbian
+
 ## v0.9.4
 ### Fixed
 - Fixed CentOS 7- to install libyaml-devel
