@@ -43,7 +43,11 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
   package 'ncurses-devel'
   package 'openssl-devel'
   package 'readline-devel'
-  package 'zlib-devel'
+  if node[:platform] == 'fedora' && node[:platform_version].to_i >= 40
+    package 'zlib-ng-compat-devel'
+  else
+    package 'zlib-devel'
+  end
 when 'osx', 'darwin'
   package 'libffi'
   package 'libyaml'
