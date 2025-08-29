@@ -42,7 +42,11 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
     package 'rust' # for yjit
   end
   package 'ncurses-devel'
-  package 'openssl-devel'
+  if node[:platform] == 'amazon' && node[:platform_version].to_i == 2
+    package 'openssl11-devel'
+  else
+    package 'openssl-devel'
+  end
   package 'readline-devel'
   if node[:platform] == 'fedora' && node[:platform_version].to_i >= 40
     package 'zlib-ng-compat-devel'
