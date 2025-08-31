@@ -24,7 +24,6 @@ jobs:
 
       matrix:
         runner:
-          - ubuntu-latest
           - macos-latest
 
     steps:
