@@ -3,10 +3,14 @@ require "docker"
 require "yaml"
 require "itamae"
 
-set :backend, :docker
+if ENV["TEST_IMAGE"] && ENV["DOCKER_CONTAINER"]
+  set :backend, :docker
+  set :docker_image, ENV["TEST_IMAGE"]
+  set :docker_container, ENV["DOCKER_CONTAINER"]
 
-set :docker_image, ENV["TEST_IMAGE"]
-set :docker_container, ENV["DOCKER_CONTAINER"]
+else
+  set :backend, :exec
+end
 
 # Disable sudo
 # set :disable_sudo, true

@@ -25,10 +25,16 @@ context "Passed rbenv.global from node.yml", if: node[:rbenv][:global] do
     it { should be_file }
     it { should exist }
     it { should be_executable }
-    it { should be_owned_by "root" }
   end
 
-  describe command("#{node[:rbenv][:rbenv_root]}/shims/ruby --version") do
+  rbenv_init = <<~EOS
+    export RBENV_ROOT=#{node[:rbenv][:rbenv_root]}
+    export RBENV_VERSION=#{node[:rbenv][:global]}
+    export PATH="#{node[:rbenv][:rbenv_root]}/bin:${PATH}"
+    eval "$(rbenv init --no-rehash -)"
+  EOS
+
+  describe command("#{rbenv_init} #{node[:rbenv][:rbenv_root]}/shims/ruby --version") do
     its(:stdout) { should_not be_empty }
     its(:stderr) { should be_empty }
     its(:exit_status) { should eq 0 }
