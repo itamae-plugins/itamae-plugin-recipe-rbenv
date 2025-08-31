@@ -1,0 +1,19 @@
+rbenv:
+  global: 3.4.5
+  versions:
+    - 3.4.5
+
+  rbenv_root: tmp/rbenv
+  scheme: https
+  cache: true
+  install_dependency: true
+  install_development_dependency: false
+
+  plugins:
+    dcarley/rbenv-sudo:
+      revision: master
+
+rbenv-default-gems:
+  default-gems:
+    - bundler
+  install: true

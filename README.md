@@ -160,6 +160,36 @@ node.reverse_merge!(
 include_recipe "rbenv::user"
 ```
 
+## Development
+### Run test
+Run itamae and serverspec tests to local (tmp/rbenv/)
+
+```bash
+bundle exec rake test:local
+```
+
+Run itamae and serverspec tests to docker (test for `rbenv::system`)
+
+```bash
+bundle exec rake test:docker_system
+```
+
+Run itamae and serverspec tests to docker (test for `rbenv::user`)
+
+```bash
+bundle exec rake test:docker_user
+```
+
+`test:docker_system` and `test:docker_user` use `ubuntu:jammy` by default.
+
+If you want to change the Docker image, please provide the `SOURCE_IMAGE`.
+
+e.g.
+
+```bash
+SOURCE_IMAGE=amazonlinux:2 bundle exec rake test:docker_system
+```
+
 ## License
 
 MIT License

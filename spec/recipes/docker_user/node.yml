@@ -1,0 +1,18 @@
+rbenv:
+  user: deploy
+
+  # FIXME: Workaround for Docker::Error::TimeoutError at `rbenv install`
+  #
+  # global: 2.3.0
+  # versions:
+  #   - 2.3.0
+
+  scheme: https
+  cache: true
+  install_dependency: true
+  install_development_dependency: true
+
+rbenv-default-gems:
+  default-gems:
+    - bundler
+  install: true

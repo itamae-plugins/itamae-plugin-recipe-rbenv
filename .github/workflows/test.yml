@@ -1,0 +1,87 @@
+name: test
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+
+env:
+  RUBY_VERSION: "2.7"
+
+jobs:
+  local:
+    name: "test on hosted runner (runner=${{ matrix.runner }})"
+
+    runs-on: ${{ matrix.runner }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        runner:
+          - macos-latest
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@eaecf785f6a34567a6d97f686bbb7bccc1ac1e5c # v1.237.0
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: bundle update
+        run: |
+          set -xe
+          bundle config --local path $PWD/vendor/bundle
+          bundle config --local jobs $(nproc)
+          bundle update --retry 3
+
+      - name: Run test
+        run: bundle exec rake test:local
+
+  docker:
+    name: "test on docker (test_task=${{ matrix.test_task }}, image=${{ matrix.image }})"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        image:
+          - debian:bullseye
+          - debian:bookworm
+          - amazonlinux:2
+          - ubuntu:focal
+          - ubuntu:jammy
+        test_task:
+          - test:docker_system
+          - test:docker_user
+
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@eaecf785f6a34567a6d97f686bbb7bccc1ac1e5c # v1.237.0
+        with:
+          ruby-version: ${{ env.RUBY_VERSION }}
+          bundler-cache: true
+
+      - name: bundle update
+        run: |
+          set -xe
+          bundle config --local path $PWD/vendor/bundle
+          bundle config --local jobs $(nproc)
+          bundle update --retry 3
+
+      - name: Run test
+        run: bundle exec rake ${TEST_TASK}
+        env:
+          SOURCE_IMAGE: ${{ matrix.image }}
+          TEST_TASK: ${{ matrix.test_task }}
