@@ -21,5 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "itamae", "~> 1.2"
 
   spec.add_development_dependency "bundler"
+  spec.add_development_dependency "docker-api"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "serverspec"
 end
