@@ -48,6 +48,6 @@ namespace :test do
 end
 
 desc "Run test"
-task :test => docker_targets.map { |target| "test:#{target}" } + %i(local)
+task :test => docker_targets.map { |target| "test:#{target}" } + %w(test:local)
 
 task default: :test
