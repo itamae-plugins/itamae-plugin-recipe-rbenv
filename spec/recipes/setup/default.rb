@@ -12,6 +12,7 @@ when "debian", "ubuntu"
 when "amazon"
   [
     "sudo",
+    "which",
 
     # `groupadd` isn't installed in https://hub.docker.com/_/amazonlinux
     "shadow-utils",
