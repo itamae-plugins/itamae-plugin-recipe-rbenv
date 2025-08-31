@@ -10,9 +10,12 @@ on:
       - synchronize
       - reopened
 
+env:
+  RUBY_VERSION: "2.3"
+
 jobs:
   local:
-    name: "test on hosted runner (Ruby=${{ matrix.ruby }}, runner=${{ matrix.runner }})"
+    name: "test on hosted runner (runner=${{ matrix.runner }})"
 
     runs-on: ubuntu-latest
 
@@ -20,8 +23,6 @@ jobs:
       fail-fast: false
 
       matrix:
-        ruby:
-          - 2.3
         runner:
           - ubuntu-latest
           - macos-latest
@@ -31,7 +32,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ matrix.ruby }}
+          ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
       - name: bundle update
@@ -45,7 +46,7 @@ jobs:
         run: bundle exec rake test:local
 
   docker:
-    name: "test on docker (Ruby=${{ matrix.ruby }}, test_task=${{ matrix.test_task }}, image=${{ matrix.image }})"
+    name: "test on docker (test_task=${{ matrix.test_task }}, image=${{ matrix.image }})"
 
     runs-on: ubuntu-latest
 
@@ -53,8 +54,6 @@ jobs:
       fail-fast: false
 
       matrix:
-        ruby:
-          - 2.3
         image:
           - debian:bullseye
           - debian:bookworm
@@ -70,7 +69,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: ${{ matrix.ruby }}
+          ruby-version: ${{ env.RUBY_VERSION }}
           bundler-cache: true
 
       - name: bundle update
