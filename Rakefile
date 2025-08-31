@@ -3,25 +3,24 @@ require "rspec/core/rake_task"
 
 ENV["SOURCE_IMAGE"] ||= "ubuntu:jammy"
 
-targets = %i(system user)
+targets = %i(docker_system docker_user)
 
 namespace :test do
   targets.each do |target|
     namespace target do
-      node_yaml = "#{__dir__}/spec/#{target}/recipes/node.yml"
-      test_image = "itamae-plugin:#{target}"
+      node_yaml = "#{__dir__}/spec/recipes/#{target}/node.yml"
+      test_image = "itamae-plugin-recipe-rbenv-#{target}:latest"
 
       desc "Run itamae to #{target}"
       task :itamae do
-        ENV["TEST_IMAGE"] = "itamae-plugin:#{target}"
-        sh "itamae docker --node-yaml=#{node_yaml} spec/#{target}/recipes/install.rb --image=#{ENV["SOURCE_IMAGE"]} --tag #{test_image}"
+        sh "itamae docker --node-yaml=#{node_yaml} #{__dir__}/spec/recipes/#{target}/install.rb --image=#{ENV["SOURCE_IMAGE"]} --tag #{test_image}"
       end
 
       desc "Run serverspec tests to #{target}"
       RSpec::Core::RakeTask.new(:serverspec) do |t|
         ENV["TEST_IMAGE"] = test_image
         ENV["NODE_YAML"] = node_yaml
-        t.pattern = "spec/#{target}/*_spec.rb"
+        t.pattern = "spec/**/*_spec.rb"
       end
     end
 
