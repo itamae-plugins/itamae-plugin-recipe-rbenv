@@ -2,6 +2,8 @@
 
 [Itamae](https://github.com/ryotarai/itamae) plugin to install ruby with rbenv
 
+[![test](https://github.com/itamae-plugins/itamae-plugin-recipe-rbenv/actions/workflows/test.yml/badge.svg)](https://github.com/itamae-plugins/itamae-plugin-recipe-rbenv/actions/workflows/test.yml)
+
 ## Installation
 
 Add this line to your application's Gemfile:
