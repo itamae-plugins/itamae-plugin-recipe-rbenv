@@ -20,5 +20,3 @@ when "amazon"
     package name
   end
 end
-
-package "git"
