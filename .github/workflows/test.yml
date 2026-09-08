@@ -60,6 +60,7 @@ jobs:
           - amazonlinux:2
           - ubuntu:jammy
           - ubuntu:noble
+          - ubuntu:resolute
         test_task:
           - test:docker_system
           - test:docker_user
