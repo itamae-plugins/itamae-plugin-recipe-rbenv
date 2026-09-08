@@ -2,17 +2,27 @@
 # https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
 case node[:platform]
 when 'debian', 'ubuntu', 'mint', 'raspbian'
+  # Debian 13 and Ubuntu 24.04 renamed libgdbm6 and libncurses5-dev in the
+  # 64-bit time_t transition. The old names are left as virtual provides, which
+  # `dpkg -s` never matches, so the package resource would reinstall them on
+  # every run.
+  # debian testing or sid returns "testing", "n/a" from node[:platform_version].
+  time_t64 = node[:platform] == 'debian' && (node[:platform_version].to_i >= 13 || node[:platform_version].to_i == 0) ||
+    node[:platform] == 'ubuntu' && node[:platform_version] >= '24.04'
+
   package 'build-essential'
   package 'libffi-dev'
   package 'libgdbm-dev'
-  if node[:platform] == 'ubuntu' && node[:platform_version] >= '20.04'
+  if time_t64
+    package 'libgdbm6t64'
+    package 'libreadline-dev'
+  elsif node[:platform] == 'ubuntu' && node[:platform_version] >= '20.04'
       package 'libgdbm6'
       package 'libreadline-dev'
   elsif node[:platform] == 'ubuntu' && node[:platform_version] >= '18.04'
       package 'libgdbm5'
       package 'libreadline-dev'
-  # debian testing or sid returns "testing", "n/a" from node[:platform_version].
-  elsif node[:platform] == 'debian' && (node[:platform_version].to_i >= 10 || node[:platform_version].to_i == 0)
+  elsif node[:platform] == 'debian' && node[:platform_version].to_i >= 10
     package 'libgdbm6'
     package 'libreadline-dev'
   elsif node[:platform] == 'raspbian'
@@ -23,7 +33,7 @@ when 'debian', 'ubuntu', 'mint', 'raspbian'
     package 'libreadline6-dev'
   end
   package 'libgmp-dev'
-  package 'libncurses5-dev'
+  package time_t64 ? 'libncurses-dev' : 'libncurses5-dev'
   package 'libssl-dev'
   package 'libyaml-dev'
   package 'rustc' # for yjit
