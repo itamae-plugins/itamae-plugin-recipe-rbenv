@@ -58,7 +58,8 @@ when 'redhat', 'fedora', 'amazon' # redhat includes CentOS
     package 'openssl-devel'
   end
   package 'readline-devel'
-  if node[:platform] == 'fedora' && node[:platform_version].to_i >= 40
+  if node[:platform] == 'fedora' && node[:platform_version].to_i >= 40 ||
+      node[:platform] == 'amazon' && node[:platform_version].to_i >= 2027
     package 'zlib-ng-compat-devel'
   else
     package 'zlib-devel'
