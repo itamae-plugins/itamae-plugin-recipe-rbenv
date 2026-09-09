@@ -55,11 +55,12 @@ jobs:
 
       matrix:
         image:
-          - debian:bullseye
           - debian:bookworm
+          - debian:trixie
           - amazonlinux:2
-          - ubuntu:focal
           - ubuntu:jammy
+          - ubuntu:noble
+          - ubuntu:resolute
         test_task:
           - test:docker_system
           - test:docker_user
